@@ -1,0 +1,99 @@
+<h1 class="text-purple">Produtos</h1>
+
+<form [formGroup]="formProduto" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col my-3">
+      <label for="codigoBarras" class="form-label">Código de Barras</label>
+      <input
+        type="text" 
+        class="form-control form-control-lg" 
+        id="codigoBarras" 
+        placeholder="Produto"
+        formControlName="codigoBarras">
+        <small *ngIf="codigoBarras.hasError('required') && submitted" class="text-danger">O código de barras é obrigatório</small>
+    </div>
+
+    <div class="col my-3">
+      <label for="nomeProduto" class="form-label">Nome do Produto</label>
+      <input 
+        type="text" 
+        class="form-control form-control-lg" id="nomeProduto" 
+        placeholder="ex.: Sabão em Pó"
+        formControlName="nomeProduto">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col my-3">
+      <label for="marcaProduto" class="form-label">Marca</label>
+      <input 
+        type="text" 
+        class="form-control form-control-lg" 
+        id="marcaProduto" 
+        placeholder="Ex.: Omo"
+        formControlName="marcaProduto">
+    </div>
+
+    <div class="col my-3">
+      <label for="qtdProduto" class="form-label">Quantidade</label>
+      <input
+        type="number" 
+        class="form-control form-control-lg" 
+        id="qtdProduto"
+        formControlName="qtdProduto">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col my-3">
+      <label for="fornecedorProduto" class="form-label">Fornecedor</label>
+      <input 
+        type="text"
+        class="form-control form-control-lg" id="fornecedorProduto"
+        placeholder="Ex.: Unilever"
+        formControlName="fornecedorProduto">
+    </div>
+
+    <div class="col my-3">
+      <label for="precoProduto" class="form-label">Preço</label>
+      <input 
+        type="text" 
+        class="form-control form-control-lg" id="precoProduto"
+        formControlName="precoProduto">
+        <small *ngIf="precoProduto.hasError('required') && submitted" class="text-danger">O preço do produto é obrigatório</small>
+    </div>
+  </div>
+
+  <button class="btn btn-lg btn-primary">Cadastrar</button>
+</form>
+
+<hr>
+
+<h2>Produtos</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Código de Barras</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Qtd.</th>
+      <th scope="col">Fornecedor</th>
+      <th scope="col">Preço</th>
+      <th class="text-right" scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produto of produtos">
+      <th scope="row">{{produto.codigoBarras}}</th>
+      <td>{{produto.nomeProduto}}</td>
+      <td>{{produto.marcaProduto}}</td>
+      <td>{{produto.qtdProduto}}</td>
+      <td>{{produto.fornecedorProduto}}</td>
+      <td>R${{produto.precoProduto}}</td>
+      <td class="d-flex justify-content-end" style="gap: 12px">
+        <button class="btn btn-danger" (click)="delete(produto)"><fa-icon [icon]="faTrashCan"></fa-icon></button> 
+        <button class="btn btn-warning" (click)="edit(produto)"><fa-icon [icon]="faPencil"></fa-icon></button>  
+      </td>
+    </tr>
+  </tbody>
+</table>

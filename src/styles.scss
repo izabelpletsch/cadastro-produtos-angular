@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'variables';
+
+html {
+  display: flex; 
+  height: 100%; 
+  flex-direction: column;
+}
+
+body {
+  flex-grow: 1;
+  display: flex;
+}
+
+app-root {
+  flex-grow: 1;
+}
+
+.btn-primary {
+  background: $sweet-pink-200 !important;
+  border: 1px solid $sweet-pink-200 !important;
+}
+
+.text-purple {
+  color: $purple-200;
+}

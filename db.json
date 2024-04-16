@@ -1,0 +1,40 @@
+{
+  "produtos": [
+    {
+      "codigoBarras": "2",
+      "nomeProduto": "2",
+      "marcaProduto": "2",
+      "qtdProduto": 2,
+      "fornecedorProduto": "2",
+      "precoProduto": "2",
+      "id": 2
+    },
+    {
+      "codigoBarras": "234",
+      "nomeProduto": "2",
+      "marcaProduto": "2",
+      "qtdProduto": 2,
+      "fornecedorProduto": "2",
+      "precoProduto": "2",
+      "id": 3
+    },
+    {
+      "codigoBarras": "123CODIGO",
+      "nomeProduto": "Sapatênis",
+      "marcaProduto": "Quem foi o MOnstro",
+      "qtdProduto": 4,
+      "fornecedorProduto": "",
+      "precoProduto": "15.99",
+      "id": 4
+    },
+    {
+      "codigoBarras": "299",
+      "nomeProduto": "2",
+      "marcaProduto": "2",
+      "qtdProduto": 2,
+      "fornecedorProduto": "2",
+      "precoProduto": "2",
+      "id": 5
+    }
+  ]
+}
